@@ -29,6 +29,9 @@ export DISABLE_MAGIC_FUNCTIONS=true     # make pasting into terminal faster
 # Tmux fix
 export TMUX_TMPDIR=/tmp
 
+# GPG
+export GPG_TTY=$(tty)
+
 # Bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
