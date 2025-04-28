@@ -1,0 +1,24 @@
+# zypper
+alias zp="zypper"
+alias szp="sudo zypper"
+
+# vim -> nvim
+alias v="nvim"
+alias vim="nvim"
+
+# cat -> bat
+alias cat="bat"
+
+# ls -> eza
+alias ls='eza -al --color=always --icons=always --group-directories-first'
+alias la='eza -a --color=always --icons=always --group-directories-first'
+alias ll='eza -l --color=always --icons=always --group-directories-first'
+alias lt='eza -aT --color=always --icons=always --group-directories-first'
+
+# misc
+alias c="clear"
+alias g="git"
+
+# colorize help
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
