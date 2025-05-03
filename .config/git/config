@@ -16,7 +16,7 @@
 ;   statusHints = false
 
 [init]
-	defualtBranch = main
+	defaultBranch = main
 
 [commit]
 	gpgsign = true
