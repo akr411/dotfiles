@@ -10,7 +10,7 @@ alias vim="nvim"
 alias cat="bat"
 
 # ls -> eza
-alias l="eza -a --color=always --icons=always --group-directories-first"
+alias l="eza -a1 --color=always --icons=always --group-directories-first"
 alias ls="eza -lah --color=always --icons=always --group-directories-first"
 alias lt="eza -aT --color=always --icons=always --group-directories-first"
 
