@@ -42,9 +42,10 @@ bindkey '^j' history-search-forward
 bindkey '^k' history-search-backward
 
 ### Prompt
-PS1="READY >"
-zi lucid for atload"!geometry::prompt" \
-    geometry-zsh/geometry
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
 
 zi ice atinit"
     ZSH_TMUX_FIXTERM=true
