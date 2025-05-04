@@ -6,8 +6,6 @@ return {
       transparent = true,
       styles = {
         comments = { italic = true },
-        type = { bold = true },
-        functions = { bold = true },
       },
     },
   },
