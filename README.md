@@ -80,28 +80,28 @@ Follow these steps to install the dotfiles:
 
 1. **Clone the repository:** Clone this repository into your `$HOME` directory.
 
-    ```bash
-    git clone git@github.com/dreamsofautonomy/dotfiles.git
-    cd dotfiles
-    ```
+   ```bash
+   git clone git@github.com/dreamsofautonomy/dotfiles.git
+   cd dotfiles
+   ```
 
 2. **Use GNU Stow to create symlinks:** Navigate to the dotfiles directory and use `stow` to create symbolic links. Each directory within the dotfiles directory (e.g., `bat`, `mise`, `nvim`, `tmux`, `zsh`) represents a package that `stow` can manage. To stow all packages, you can use the following:
 
-    ```bash
-    stow .
-    ```
+   ```bash
+   stow .
+   ```
 
-    Alternatively, to stow a specific package (e.g., `bat`), use:
+   Alternatively, to stow a specific package (e.g., `bat`), use:
 
-    ```bash
-    stow bat
-    ```
+   ```bash
+   stow bat
+   ```
 
-    You can stow multiple packages at once:
+   You can stow multiple packages at once:
 
-    ```bash
-    stow bat nvim zsh
-    ```
+   ```bash
+   stow bat nvim zsh
+   ```
 
 ## Usage
 
@@ -112,13 +112,3 @@ Follow these steps to install the dotfiles:
   git pull
   stow . # or stow <package_name>
   ```
-
-## Organization
-
-The repository is organized into directories, each representing a specific application or configuration area:
-
-- `bat`: Configuration files for `bat`.
-- `mise`: Configuration files for `mise`.
-- `nvim`: Configuration files for `nvim`.
-- `tmux`: Configuration files for `tmux`.
-- `zsh`: Configuration files for `zsh`.
