@@ -9,12 +9,19 @@ return {
     "saghen/blink.cmp",
     opts = {
       completion = {
+        menu = {
+          border = "rounded",
+          scrollbar = false,
+        },
+        documentation = {
+          window = {
+            border = "rounded",
+            scrollbar = false,
+          },
+        },
         ghost_text = {
           enabled = false,
           show_with_menu = false,
-        },
-        menu = {
-          auto_show = true,
         },
       },
       keymap = {
