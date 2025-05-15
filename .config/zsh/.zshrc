@@ -21,6 +21,7 @@ bindkey -v # vi mode
 bindkey -M viins 'kj' vi-cmd-mode
 bindkey '^j' history-search-forward
 bindkey '^k' history-search-backward
+bindkey '\t' autosuggest-accept
 
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     exec tmux new-session -A -s ${USER} >/dev/null 2>&1
