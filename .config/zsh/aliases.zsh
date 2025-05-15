@@ -36,10 +36,7 @@ alias gr="git reset"
 alias gs="git status --short"
 alias gu="git pull"
 
-gcm() { git commit --message "$*" }
-
-# misc
-alias c="clear"
+gcm() { git commit --message "$1" }
 
 # colorize help
 alias -g -- -h="-h 2>&1 | bat --language=help --style=plain"
