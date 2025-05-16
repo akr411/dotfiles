@@ -5,6 +5,7 @@ return {
     opts = {
       transparent = true,
       styles = {
+        keywords = { bold = true },
         comments = { italic = true },
       },
     },
@@ -69,6 +70,7 @@ return {
     "nvim-lualine/lualine.nvim",
     opts = {
       sections = {
+        lualine_a = {},
         lualine_z = {},
       },
     },
