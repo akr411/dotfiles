@@ -1,0 +1,98 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 8,
+    "start_hidden": true,
+
+    "modules-left": ["cpu", "memory", "disk", "network"],
+    "modules-center": ["sway/workspaces", "sway/window"],
+    "modules-right": ["custom/nightshift", "custom/brightness", "pulseaudio", "clock", "tray"],
+
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 2,
+        "tooltip": true,
+    },
+
+    "memory": {
+        "format": " {percentage}%",
+        "tooltip-format": "{used:0.1f}G / {total:0.1f}G used",
+        "interval": 5,
+    },
+
+    "disk": {
+        "format": "󰋊 {percentage_used}%",
+        "path": "/home",
+        "tooltip-format": "{used} / {total} used",
+        "interval": 30,
+    },
+
+    "network": {
+        "format": "󰕒 {bandwidthUpBytes} 󰇚 {bandwidthDownBytes}",
+        "interval": 2,
+        "tooltip-format": "Upload: {bandwidthUpBytes}\nDownload: {bandwidthDownBytes}"
+    },
+
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": false,
+        "all-outputs": true
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50,
+        "tooltip": false,
+    },
+
+    "custom/nightshift": {
+        "exec": "$HOME/.config/waybar/scripts/nightshift.sh",
+        "return-type": "json",
+        "interval": 60,
+        "format": "{}",
+        "on-click": "bash -c 'if pidof wlsunset; then killall wlsunset && notify-send -t 1000 -u low \"Night Shift\" \"Disabled\"; else wlsunset -l 12.9753 -L 77.591 -T 6500 -t 3500 && notify-send -t 1000 -u low \"Night Shift\" \"Enabled\"; fi'",
+        "tooltip": true
+    },
+
+    "custom/brightness": {
+        "exec": "$HOME/.config/waybar/scripts/brightness.sh",
+        "interval": 1,
+        "return-type": "json",
+        "format": "{text}",
+        "on-click": "$HOME/.local/bin/brtctl.sh +5",
+        "on-click-right": "$HOME/.local/bin/brtctl.sh -5",
+        "on-scroll-up": "$HOME/.local/bin/brtctl.sh +2",
+        "on-scroll-down": "$HOME/.local/bin/brtctl.sh -2",
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 muted",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "tooltip-format": "{desc}"
+    },
+
+    "clock": {
+        "format": "󰅐 {:%H:%M}",
+        "format-alt": "󰃭 {:%Y-%m-%d}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#ebbcba'><b>{}</b></span>",
+                "days": "<span color='#e0def4'><b>{}</b></span>",
+                "weekdays": "<span color='#9ccfd8'><b>{}</b></span>",
+                "today": "<span color='#eb6f92'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    }
+}

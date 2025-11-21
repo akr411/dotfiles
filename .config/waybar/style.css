@@ -1,0 +1,129 @@
+* {
+  font-family: "0xProto Nerd Font";
+  font-size: 14px;
+  font-weight: bold;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+/* All modules */
+#cpu,
+#memory,
+#disk,
+#network,
+#workspaces,
+#window,
+#custom-nightshift,
+#custom-brightness,
+#pulseaudio,
+#clock,
+#tray {
+  padding: 6px 12px;
+  background-color: rgba(31, 29, 46, 0.95);
+  margin-top: 12px;
+}
+
+/* Left side modules */
+#cpu {
+  color: #f6c177;
+  margin-left: 12px;
+}
+
+#memory {
+  color: #ebbcba;
+}
+
+#disk {
+  color: #c4a7e7;
+}
+
+#network {
+  color: #9ccfd8;
+}
+
+/* Center modules */
+#workspaces {
+  padding: 0;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  background-color: transparent;
+  color: #6e6a86;
+  transition: all 0.3s ease;
+}
+
+#workspaces button.focused #workspaces button.active {
+  background-color: #31748f;
+  color: #e0def4;
+}
+
+#workspaces button:hover {
+  background-color: rgba(49, 117, 143, 0.5);
+  color: #e0def4;
+}
+
+#workspaces button.urgent {
+  background-color: #eb6f92;
+  color: #e0def4;
+}
+
+#window {
+  color: #9ccfd8;
+  font-weight: 500;
+}
+
+/* Right side modules */
+#custom-nightshift {
+  color: #9ccfd8;
+}
+
+#custom-brightness {
+  color: #c4a7e7;
+}
+
+#pulseaudio {
+  color: #ebbcba;
+}
+
+#pulseaudio.muted {
+  color: #6e6a86;
+}
+
+#network.disconnected {
+  color: #eb6f92;
+}
+
+#clock {
+  color: #f6c177;
+  font-weight: 600;
+}
+
+#tray {
+  padding: 0 8px;
+  margin-right: 12px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb6f92;
+}
+
+/* Tooltips */
+tooltip {
+  background-color: rgba(31, 29, 46, 0.85);
+  border: 2px solid #ebbcba;
+  border-radius: 0;
+  color: #e0def4;
+}
+
+tooltip label {
+  padding: 8px;
+}

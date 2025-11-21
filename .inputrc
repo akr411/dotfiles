@@ -1,0 +1,40 @@
+# Readline settings
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set menu-complete-display-prefix on
+set colored-stats on
+set colored-completion-prefix on
+set mark-symlinked-directories on
+set visible-stats on
+set keyseq-timeout 300
+
+# Vi mode settings
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string ""
+set vi-cmd-mode-string " "
+
+# Vi insert mode keybindings
+set keymap vi-insert
+"kj": vi-movement-mode
+"\C-k": history-search-backward
+"\C-j": history-search-forward
+"\C-l": clear-display
+"\C-a": beginning-of-line
+"\C-i": end-of-line
+"\C-y": yank
+"\C-_": undo
+TAB: menu-complete-backward
+"\e[Z": menu-complete
+"\ee": glob-expand-word
+"\C-x\C-r": re-read-init-file
+
+# Vi command mode keybindings
+set keymap vi-command
+"k": history-search-backward
+"j": history-search-forward
+"\C-l": clear-screen
+"u": undo
+"/": reverse-search-history
+"?": forward-search-history
+

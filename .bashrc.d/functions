@@ -1,0 +1,43 @@
+# mkdir + cd
+mkcd() {
+  if [ $# -eq 0 ]; then
+    echo "Error: No directory name provided"
+    echo "Usage: mkcd <directory_name>"
+    return 1
+  fi
+
+  if [ $# -gt 1 ]; then
+    echo "Error: Too many arguments"
+    echo "Usage: mkcd <directory_name>"
+    return 1
+  fi
+  
+  if mkdir -p "$1"; then
+    cd "$1" || return 1
+    echo "Created and moved to: $(pwd)"
+  else
+    echo "Error: Failed to create directory '$1'"
+    return 1
+  fi
+}
+
+up() {
+  if [ $# -eq 0 ]; then
+    cd ..
+    return 0
+  fi
+
+  if ! [[ "$1" =~ ^[1-9]+$ ]]; then
+    echo "Error: Argument must be a positive integer"
+    echo "Usage: up [number"
+    return 1
+  fi
+
+  local path=""
+  for ((i=0; i<$1; i++)); do
+    path="../$path"
+  done
+
+  cd "$path" || return 1
+  pwd
+}

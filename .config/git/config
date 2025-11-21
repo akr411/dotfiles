@@ -1,0 +1,70 @@
+[user]
+  name = Anwaya Rai
+  email = rai.anwaya@gmail.com
+  signingkey = 8618DDA6EA680DA1
+
+[core]
+  autocrlf = input
+  compression = 9
+  whitespace = error
+  preloadindex = true
+  fsync = none
+
+[advice]
+  addEmptyPathspec = false
+;   pushNonFastForward = false
+;   statusHints = false
+
+[init]
+  defaultBranch = main
+  
+[commit]
+  gpgsign = true
+  
+[tag]
+  gpgSign = true
+  
+[blame]
+  coloring = highlightRecent
+  date = relative
+
+[log]
+  abbrevCommit = true
+
+[status]
+  branch = true
+  short = true
+  showStash = true
+  showUntrackedFiles = all
+
+[diff]
+  context = 3
+  renames = copies
+  interHunkContext = 10
+
+[pager]
+  branch = false
+
+[interactive]
+  singlekey = true
+
+[push]
+  autoSetupRemote = true
+  default = current
+  followTags = true
+
+[pull]
+  default = current
+  rebase = true
+
+[submodule]
+  fetchJobs = 16
+
+[rebase]
+  autoStash = true
+
+[url "git@github.com:akr411"]
+  insteadOf = "akr:"
+
+[url "git@github.com:"]
+  insteadOf = "gh:"
