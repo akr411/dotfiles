@@ -1,6 +1,6 @@
 # Dotfiles
 
-Personal configuration files for my Fedora + Sway environment repository.
+Personal configuration files for my Fedora + Sway environment.
 
 ## Setup
 
