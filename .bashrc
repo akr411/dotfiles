@@ -40,6 +40,7 @@ export XCURSOR_SIZE=28
 . "$CARGO_HOME/env" # source all cargo paths
 export PATH="$GOBIN:$PATH"
 export PATH="${XDG_DATA_HOME}/npm/bin:$PATH"
+export PATH="/opt/kotlinc/bin:$PATH"
 
 # User specific environment
 if ! [[ "$PATH" =~ $HOME/.local/bin:$HOME/bin: ]]; then
