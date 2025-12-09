@@ -17,65 +17,73 @@ configuration {
 }
 
 * {
-    bg: rgba(25, 23, 36, 0.90);
-    cur: rgba(31, 29, 46, 0.6);
-    fgd: #e0def4;
-    cmt: #6e6a86;
-    cya: #9ccfd8;
-    grn: #31748f;
-    ora: #ebbcba;
-    pur: #c4a7e7;
-    red: #eb6f92;
-    yel: #f6c177;
-    
+    // Rose Pine
+    base: #191724;
+    surface: #1f1d2e;
+    overlay: #26233a;
+    muted: #6e6a86;
+    subtle: #908caa;
+    text: #e0def4;
+    love: #eb6f92;
+    gold: #f6c177;
+    rose: #ebbcba;
+    pine: #31748f;
+    foam: #9ccfd8;
+    iris: #c4a7e7;
+    hl-low: #21202e;
+    hl-med: #403d52;
+    hl-high: #524f67;
+
+    bg: rgba(25, 23, 36, 0.95);
+
     font: "0xProto Nerd Font 12";
-    
-    foreground: @fgd;
+
+    foreground: @text;
     background: @bg;
-    active-background: @grn;
-    urgent-background: @red;
-    
-    selected-background: @active-background;
+    active-background: @rose;
+    urgent-background: @love;
+
+    selected-background: @hl-high;
     selected-urgent-background: @urgent-background;
-    selected-active-background: @active-background;
-    separatorcolor: @active-background;
-    bordercolor: @ora;
+    selected-active-background: @foam;
+    separatorcolor: @hl-med;
+    bordercolor: @rose;
 }
 
 #window {
     transparency:     "real";
     background-color: @background;
-    border:           3;
+    border:           2;
     border-radius:    0;
     border-color:     @bordercolor;
-    padding:          10;
-    width:            600;
+    padding:          16;
+    width:            750;
 }
 #mainbox {
     border:  0;
-    padding: 10;
+    padding: 12;
     background-color: transparent;
 }
 #message {
-    border:       1px dash 0px 0px ;
-    border-color: @separatorcolor;
-    padding:      1px ;
+    border:       2px solid 0px 0px;
+    border-color: @hl-med;
+    padding:      8px;
 }
 #textbox {
     text-color: @foreground;
 }
 #listview {
     fixed-height: 0;
-    border:       2px dash 0px 0px;
-    border-color: @bordercolor;
-    spacing:      6px;
+    border:       2px solid 0px 0px;
+    border-color: @hl-med;
+    spacing:      8px;
     scrollbar:    false;
-    padding:      8px 0px 0px;
+    padding:      12px 0px 0px;
 }
 #element {
     border:  0;
-    padding: 8px 12px;
-    spacing: 10px;
+    padding: 10px 16px;
+    spacing: 12px;
 }
 #element.normal.normal {
     background-color: transparent;
@@ -87,22 +95,26 @@ configuration {
 }
 #element.normal.active {
     background-color: transparent;
-    text-color:       @background;
+    text-color:       @foam;
 }
 #element.selected.normal {
-    background-color: rgba(235, 188, 186, 0.25);
-    text-color:       @foreground;
+    background-color: @hl-high;
+    text-color:       @rose;
+    border-color:     @rose;
+    border:           0px 0px 0px 3px solid;
 }
 #element.selected.urgent {
     background-color: @selected-urgent-background;
     text-color:       @foreground;
 }
 #element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @background;
+    background-color: @hl-high;
+    text-color:       @foam;
+    border-color:     @foam;
+    border:           0px 0px 0px 3px solid;
 }
 #element.alternate.normal {
-    background-color: transparent;
+    background-color: @hl-low;
     text-color:       @foreground;
 }
 #element.alternate.urgent {
@@ -110,8 +122,8 @@ configuration {
     text-color:       @foreground;
 }
 #element.alternate.active {
-    background-color: transparent;
-    text-color:       @foreground;
+    background-color: @hl-low;
+    text-color:       @foam;
 }
 #scrollbar {
     width:        2px ;
@@ -120,19 +132,23 @@ configuration {
     padding:      0;
 }
 #sidebar {
-    border:       2px dash 0px 0px ;
-    border-color: @separatorcolor;
+    border:       2px solid 0px 0px;
+    border-color: @hl-med;
 }
 #button.selected {
-    background-color: @selected-background;
-    text-color:       @foreground;
+    background-color: @hl-high;
+    text-color:       @rose;
+    border:           0px 0px 0px 3px solid;
+    border-color:     @rose;
 }
 #inputbar {
     spacing:          0;
     text-color:       @foreground;
-    padding:          12px ;
-    background-color: @cur;
-    margin:           0px 0px 10px 0px;
+    padding:          14px;
+    background-color: @overlay;
+    margin:           0px 0px 12px 0px;
+    border:           0px 0px 2px 0px solid;
+    border-color:     @hl-med;
 }
 #case-indicator {
     spacing:    0;
@@ -140,11 +156,11 @@ configuration {
 }
 #entry {
     spacing:    0;
-    text-color: @cya;
+    text-color: @foam;
 }
 #prompt {
     spacing:    0;
-    text-color: @grn;
+    text-color: @rose;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
@@ -153,5 +169,5 @@ configuration {
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em;
-    text-color: @grn;
+    text-color: @rose;
 }
