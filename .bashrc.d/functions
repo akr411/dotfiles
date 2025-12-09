@@ -41,3 +41,8 @@ up() {
   cd "$path" || return 1
   pwd
 }
+
+cpwd() {
+  pwd | wl-copy
+  echo "Copied to clipboard: $(pwd)"
+}
