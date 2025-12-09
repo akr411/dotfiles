@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "height": 32,
-    "spacing": 8,
+    "spacing": 12,
     "start_hidden": true,
 
     "modules-left": ["cpu", "memory", "disk", "network"],
@@ -44,6 +44,9 @@
         "format": "{}",
         "max-length": 50,
         "tooltip": false,
+        "rewrite": {
+            "": ""
+        }
     },
 
     "custom/nightshift": {
@@ -92,7 +95,7 @@
     },
 
     "tray": {
-        "icon-size": 16,
+        "icon-size": 18,
         "spacing": 8
     }
 }

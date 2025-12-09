@@ -35,7 +35,7 @@ set $menu $rofi_cmd -show combi -combi-modes window#drun#run -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
-output * bg /home/akr411/Pictures/Wallpapers/wallhaven-ly353y_3440x1440.png fill
+output * bg /home/akr411/Pictures/Wallpapers/wallhaven-21yp59_3440x1440.png fill
 #
 # Example configuration:
 #
@@ -268,7 +268,7 @@ set $highlight_low  #21202e
 set $highlight_med  #403d52
 set $highlight_high #524f67
 
-# Window colors - Rosé Pine themed
+# Window colors
 #                        # border         #background      #text    #indicator  #child_border
 client.focused           $rose           $base            $text    $rose       $rose
 client.focused_inactive  $highlight_med  $base            $subtle  $muted      $highlight_med
