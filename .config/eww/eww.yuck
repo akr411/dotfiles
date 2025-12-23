@@ -54,9 +54,17 @@
     :space-evenly false
     :hexpand true
     :vexpand true
-    (label
-      :class "time"
-      :text time)
+    (box
+      :orientation "h"
+      :space-evenly false
+      :spacing 20
+      :halign "center"
+      (label
+        :class "icon"
+        :text "")
+      (label
+        :class "time"
+        :text time))
     (label
       :class "date"
       :text date)))
@@ -72,7 +80,8 @@
     (box
       :orientation "h"
       :space-evenly false
-      :spacing 10
+      :spacing 20
+      :halign "center"
       (label
         :class "icon"
         :text weather_icon)
@@ -90,12 +99,17 @@
     :orientation "v"
     :space-evenly false
     :hexpand true
-    (label
-      :class "widget-title"
-      :text "CPU")
-    (label
-      :class "value"
-      :text "${round(cpu_usage, 0)}%")
+    (box
+      :orientation "h"
+      :space-evenly false
+      :spacing 20
+      :halign "center"
+      (label
+        :class "icon"
+        :text "")
+      (label
+        :class "value"
+        :text "${round(cpu_usage, 0)}%"))
     (progress
       :class "progress-bar"
       :value {cpu_usage ?: 0})))
@@ -107,12 +121,17 @@
     :orientation "v"
     :space-evenly false
     :hexpand true
-    (label
-      :class "widget-title"
-      :text "RAM")
-    (label
-      :class "value"
-      :text "${ram_usage}%")
+    (box
+      :orientation "h"
+      :space-evenly false
+      :spacing 20
+      :halign "center"
+      (label
+        :class "icon"
+        :text "")
+      (label
+        :class "value"
+        :text "${ram_usage}%"))
     (progress
       :class "progress-bar"
       :value {ram_usage ?: 0})))
