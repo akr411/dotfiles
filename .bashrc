@@ -32,9 +32,6 @@ export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
 export PYTHON_HISTORY="${XDG_STATE_HOME}/python/python_history"
 export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME}/python"
 export CLAUDE_CONFIG_DIR="${XDG_CONFIG_HOME}/claude"
-export XCURSOR_PATH="${XDG_DATA_HOME}/icons:/usr/share/icons"
-export XCURSOR_THEME=BreezeX-RoséPine
-export XCURSOR_SIZE=28
 
 # Path
 . "$CARGO_HOME/env" # source all cargo paths
