@@ -1,0 +1,118 @@
+;; Variables for system info
+(defpoll cpu_usage :interval "2s" :initial "0" "top -bn1 | grep 'Cpu(s)' | sed 's/.*, *\\([0-9.]*\\)%* id.*/\\1/' | awk '{result = 100 - $1; if (result == \"\") result = 0; print result}'")
+(defpoll ram_usage :interval "2s" :initial "0" "free -m | grep Mem | awk '{result = ($3/$2)*100; if (result == \"\") result = 0; printf \"%.0f\", result}'")
+(defpoll time :interval "1s" "date '+%H:%M'")
+(defpoll date :interval "1m" "date '+%A, %B %d'")
+
+;; Weather variables
+(defpoll weather_temp :interval "10m" "~/.config/eww/scripts/weather.sh")
+(defpoll weather_condition :interval "10m" "~/.config/eww/scripts/weather-condition.sh")
+(defpoll weather_icon :interval "10m" "~/.config/eww/scripts/weather-icon.sh")
+
+;; Dashboard window
+(defwindow dashboard
+  :monitor 0
+  :geometry (geometry
+    :x "0%"
+    :y "0%"
+    :width "800px"
+    :height "600px"
+    :anchor "center")
+  :stacking "bottom"
+  :exclusive false
+  (dashboard_layout))
+
+;; Main dashboard layout
+(defwidget dashboard_layout []
+  (box
+    :class "dashboard"
+    :orientation "v"
+    :space-evenly false
+    :spacing 15
+    :halign "center"
+    :valign "center"
+    ;; Top row - clock and weather
+    (box
+      :orientation "h"
+      :space-evenly false
+      :spacing 15
+      (clock_widget)
+      (weather_widget))
+    ;; Bottom row - CPU and RAM
+    (box
+      :orientation "h"
+      :space-evenly false
+      :spacing 15
+      (cpu_widget)
+      (ram_widget))))
+
+;; Clock widget
+(defwidget clock_widget []
+  (box
+    :class "widget clock"
+    :orientation "v"
+    :space-evenly false
+    :hexpand true
+    :vexpand true
+    (label
+      :class "time"
+      :text time)
+    (label
+      :class "date"
+      :text date)))
+
+;; Weather widget
+(defwidget weather_widget []
+  (box
+    :class "widget weather"
+    :orientation "v"
+    :space-evenly false
+    :hexpand true
+    :vexpand true
+    (box
+      :orientation "h"
+      :space-evenly false
+      :spacing 10
+      (label
+        :class "icon"
+        :text weather_icon)
+      (label
+        :class "temp"
+        :text "${weather_temp}°C"))
+    (label
+      :class "condition"
+      :text weather_condition)))
+
+;; CPU widget
+(defwidget cpu_widget []
+  (box
+    :class "widget cpu"
+    :orientation "v"
+    :space-evenly false
+    :hexpand true
+    (label
+      :class "widget-title"
+      :text "CPU")
+    (label
+      :class "value"
+      :text "${round(cpu_usage, 0)}%")
+    (progress
+      :class "progress-bar"
+      :value {cpu_usage ?: 0})))
+
+;; RAM widget
+(defwidget ram_widget []
+  (box
+    :class "widget ram"
+    :orientation "v"
+    :space-evenly false
+    :hexpand true
+    (label
+      :class "widget-title"
+      :text "RAM")
+    (label
+      :class "value"
+      :text "${ram_usage}%")
+    (progress
+      :class "progress-bar"
+      :value {ram_usage ?: 0})))
