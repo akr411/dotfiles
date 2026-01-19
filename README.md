@@ -2,6 +2,8 @@
 
 Personal configuration files for my Fedora + Sway environment.
 
+![Sway Screenshots](/.config/sway/screenshots/homescreen_with_bar.png)
+
 ## Setup
 
 Clone and setup on a new system:
@@ -14,19 +16,22 @@ bare config --local status.showUntrackedFiles no
 ```
 
 Add the alias to your .bashrc:
+
 ```bash
 echo "alias bare='/usr/bin/git --git-dir=$HOME/.local/share/dotfiles --work-tree=$HOME'" >> ~/.bashrc
 ```
+
 ## What's Included
 
-  - Shell: Modular bash configuration (.bashrc.d/)
-  - Wayland/Sway: Window manager, waybar, swaylock, rofi
-  - Terminal: foot, tmux with custom scripts
-  - Apps: bat, git, dunst, zathura
-  - Theming: GTK 2/3/4, wallpapers
-  - Scripts: Brightness control, nightshift, tmux-zen
+- Shell: Modular bash configuration (.bashrc.d/)
+- Wayland/Sway: Window manager, waybar, swaylock, rofi
+- Terminal: foot, tmux with custom scripts
+- Apps: bat, git, dunst, zathura
+- Theming: GTK 2/3/4, wallpapers
+- Scripts: Brightness control, nightshift, tmux-zen
 
 ## Usage
+
 ```bash
 bare status
 bare add .config/app/config
