@@ -2,7 +2,7 @@
 
 Personal configuration files for my Fedora + Sway environment.
 
-![Sway Screenshots](/.config/sway/screenshots/homescreen_with_bar.png)
+![Sway Screenshots](/.config/sway/screenshots/homescreen_with_bar.png?raw=true "SwayWM Homescreen")
 
 ## Setup
 

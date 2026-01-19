@@ -1,0 +1,5 @@
+![homescreen](./screenshots/homescreen.png?raw=true "Homescreen")
+![homescreen with bar](./screenshots/homescreen_with_bar.png?raw=true "Homescreen with Waybar")
+![rofi](./screenshots/rofi.png?raw=true "Rofi")
+![terminal](./screenshots/terminal.png?raw=true "Terminal")
+![thunar and firefox](./screenshots/thunar_firefox.png?raw=true "Thunar and Firefox")
